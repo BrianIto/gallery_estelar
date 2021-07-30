@@ -8,13 +8,13 @@ export default function Home() {
 
   const images : Array<{image: string, type: variable}> = [{
     image: "https://picsum.photos/id/564/800/530",
-    type: 'tall-wide'
+    type: 'common'
   }, {
     image: "https://picsum.photos/id/566/800/530",
-    type: `tall-wide`,
+    type: `common`,
   },  {
     image: "https://picsum.photos/id/715/800/530",
-    type: `tall-wide`,
+    type: `common`,
   }]
 
   const createClass = (type : string) : string => {
