@@ -39,7 +39,9 @@ export default function Home() {
     <div className="image-mosaic">
       {
         images.map(image => (
-          <div className={createClass(image.type)} style={{backgroundImage: "url('"+image.image+"')"}}/>
+          <div 
+            key={image.image}
+            className={createClass(image.type)} style={{backgroundImage: "url('"+image.image+"')"}}/>
         ))
       }
     </div>
