@@ -7,7 +7,7 @@ export default function Home() {
   type variable =  "tall" | "wide" | "common" | "tall-wide"
 
   const images : Array<{image: string, type: variable}> = [{
-    image: "/projeto-Banner.jpg",
+    image: "./Projeto-Banner.jpg",
     type: 'tall'
   }, {
     image: "https://picsum.photos/id/566/800/530",
