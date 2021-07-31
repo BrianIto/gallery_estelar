@@ -7,7 +7,7 @@ export default function Home() {
   type variable =  "tall" | "wide" | "common" | "tall-wide"
 
   const images : Array<{image: string, type: variable}> = [{
-    image: "/Projeto-Banner.jpg",
+    image: "/banner1.jpg",
     type: 'tall'
   }, {
     image: "https://picsum.photos/id/566/800/530",
@@ -42,6 +42,7 @@ export default function Home() {
           <div 
             key={image.image}
             className={createClass(image.type)}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={image.image} />
           </div>
         ))
