@@ -7,14 +7,14 @@ export default function Home() {
   type variable =  "tall" | "wide" | "common" | "tall-wide"
 
   const images : Array<{image: string, type: variable}> = [{
-    image: "https://picsum.photos/id/564/800/530",
-    type: 'common'
+    image: "/projeto-Banner.jpg",
+    type: 'tall'
   }, {
     image: "https://picsum.photos/id/566/800/530",
-    type: `common`,
+    type: `tall`,
   },  {
     image: "https://picsum.photos/id/715/800/530",
-    type: `common`,
+    type: `tall`,
   }]
 
   const createClass = (type : string) : string => {
@@ -41,7 +41,9 @@ export default function Home() {
         images.map(image => (
           <div 
             key={image.image}
-            className={createClass(image.type)} style={{backgroundImage: "url('"+image.image+"')"}}/>
+            className={createClass(image.type)}>
+            <img src={image.image} />
+          </div>
         ))
       }
     </div>
