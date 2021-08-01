@@ -43,7 +43,7 @@ export default function Home() {
   React.useEffect(() => {
       window.addEventListener("message", (e) => {
         // @ts-ignore
-        e.source.postMessage(mosaicRef.current.offsetHeight, e.origin);
+        e.source.postMessage(mosaicRef.current.scrollHeight, e.origin);
       })
     })
 
