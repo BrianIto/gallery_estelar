@@ -41,8 +41,7 @@ export default function Home() {
   const mosaicRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
-      let hash = ""+mosaicRef.current.offsetHeight;
-      router.push('/#'+hash)
+      window.postMessage(mosaicRef.current.offsetHeight, "*");
     })
 
   return (
