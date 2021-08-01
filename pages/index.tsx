@@ -41,7 +41,10 @@ export default function Home() {
   const mosaicRef = React.useRef<HTMLDivElement>();
 
   React.useEffect(() => {
-      window.postMessage(mosaicRef.current.offsetHeight, "*");
+      window.addEventListener("message", (e) => {
+        // @ts-ignore
+        e.source.postMessage(mosaicRef.current.offsetHeight, e.origin);
+      })
     })
 
   return (
