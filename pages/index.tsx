@@ -1,10 +1,13 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import React from "react"
+import {useRouter} from "next/router";
 
 export default function Home() {
 
   type variable =  "tall" | "wide" | "common" | "tall-wide"
+  const router = useRouter()
 
   const images : Array<{image: string, type: variable}> = [{
     image: "/banner1.jpg",
@@ -35,8 +38,15 @@ export default function Home() {
     return string
   }
 
+  const mosaicRef = React.useRef<HTMLDivElement>();
+
+  React.useEffect(() => {
+      let hash = ""+mosaicRef.current.offsetHeight;
+      router.push('/#'+hash)
+    })
+
   return (
-    <div className="image-mosaic">
+    <div className="image-mosaic" ref={mosaicRef}>
       {
         images.map(image => (
           <div 
