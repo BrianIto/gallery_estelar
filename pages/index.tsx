@@ -43,6 +43,7 @@ export default function Home() {
   React.useEffect(() => {
       window.addEventListener("message", (e) => {
         setTimeout(() => {
+          alert(mosaicRef.current.offsetHeight)
           // @ts-ignore
           e.source.postMessage(mosaicRef.current.offsetHeight, e.origin);
         }, 3000);
